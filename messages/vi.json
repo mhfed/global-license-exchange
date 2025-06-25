@@ -3,6 +3,51 @@
     "title": "Đổi Bằng Lái Xe Quốc Tế - Dịch Vụ Uy Tín",
     "description": "Dịch vụ đổi bằng lái xe quốc tế uy tín, nhanh chóng, thủ tục đơn giản. Hỗ trợ 24/7, cam kết thành công 100%."
   },
+  "header": {
+    "logoText": "ĐỔI BẰNG LÁI XE QUỐC TẾ"
+  },
+  "nav": {
+    "menu": "Menu",
+    "language": "Ngôn ngữ",
+    "about": "Giới thiệu",
+    "procedure": "Thủ tục",
+    "services": "Dịch vụ",
+    "exchange": "Đổi bằng",
+    "faq": "Hỏi đáp",
+    "experience": "Kinh nghiệm",
+    "contact": "Liên hệ"
+  },
+  "footer": {
+    "company": {
+      "title": "Thông tin",
+      "description": "Trung tâm đổi bằng lái xe quốc tế uy tín hàng đầu Việt Nam - Đổi bằng lái xe quốc tế sang bằng lái Việt Nam - Đổi bằng lái Việt Nam sang bằng IDP 3 năm hoặc bằng IAA 10-20 năm - Hợp pháp hóa bằng lái xe quốc tế để sử dụng tại Việt Nam"
+    },
+    "consulting": {
+      "title": "TƯ VẤN",
+      "license": "Tư vấn bằng lái xe",
+      "experience": "Kinh nghiệm đổi bằng",
+      "service": "Dịch vụ đổi bằng lái"
+    },
+    "info": {
+      "title": "THÔNG TIN ĐĂNG KÝ",
+      "security": "Bảo mật thông tin",
+      "howto": "Cách đổi bằng lái xe quốc tế",
+      "payment": "Phương thức thanh toán dịch vụ",
+      "commitment": "Cam kết đổi bằng lái"
+    },
+    "contact": {
+      "title": "LIÊN HỆ",
+      "address": "Địa chỉ",
+      "phone": "Số điện thoại"
+    },
+    "social": {
+      "title": "Mạng xã hội"
+    },
+    "copyright": "IAA Vietnam",
+    "allRights": "Bảo lưu mọi quyền",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng"
+  },
   "cta": {
     "getStarted": "Bắt Đầu Ngay",
     "learnMore": "Tìm Hiểu Thêm",
@@ -62,14 +107,6 @@
     "readMore": "Đọc thêm",
     "publishedOn": "Đăng ngày",
     "noArticles": "Chưa có bài viết nào"
-  },
-  "footer": {
-    "contact": "Liên hệ",
-    "phone": "Điện thoại",
-    "email": "Email",
-    "address": "Địa chỉ",
-    "social": "Theo dõi chúng tôi",
-    "language": "Ngôn ngữ"
   },
   "navigation": {
     "home": "Trang chủ",

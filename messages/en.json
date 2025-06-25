@@ -3,6 +3,51 @@
     "title": "International Driver's License Exchange - Trusted Service",
     "description": "Trusted and fast international driver's license exchange service with simple procedures. 24/7 support, 100% success guaranteed."
   },
+  "header": {
+    "logoText": "INTERNATIONAL DRIVER'S LICENSE EXCHANGE"
+  },
+  "nav": {
+    "menu": "Menu",
+    "language": "Language",
+    "about": "About",
+    "procedure": "Procedure",
+    "services": "Services",
+    "exchange": "Exchange",
+    "faq": "FAQ",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "footer": {
+    "company": {
+      "title": "Information",
+      "description": "Vietnam's #1 trusted international driver's license exchange center - Converting international driver's licenses to Vietnamese licenses - Converting Vietnamese driver's licenses to 3-year IDP or 10-20 year IAA licenses - Legalizing international driver's licenses for use in Vietnam"
+    },
+    "consulting": {
+      "title": "CONSULTING",
+      "license": "Driver's license consulting",
+      "experience": "License exchange experience",
+      "service": "License exchange services"
+    },
+    "info": {
+      "title": "REGISTRATION INFORMATION",
+      "security": "Information security",
+      "howto": "How to exchange international driver's license",
+      "payment": "Service payment methods",
+      "commitment": "License exchange commitment"
+    },
+    "contact": {
+      "title": "CONTACT",
+      "address": "Address",
+      "phone": "Phone number"
+    },
+    "social": {
+      "title": "Social media"
+    },
+    "copyright": "IAA Vietnam",
+    "allRights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
   "hero": {
     "headline": "Easy International Driver's License Exchange",
     "subheadline": "Fast procedures, leading reputation",
@@ -57,14 +102,6 @@
   },
   "blog": {
     "title": "News & Guides"
-  },
-  "footer": {
-    "contact": "Contact",
-    "phone": "Phone",
-    "email": "Email",
-    "address": "Address",
-    "social": "Follow us",
-    "language": "Language"
   },
   "navigation": {
     "home": "Home",

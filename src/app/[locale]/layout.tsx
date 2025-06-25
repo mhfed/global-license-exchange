@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
+import { Header } from '../_components/ui/header';
+import { Footer } from '../_components/ui/footer';
 import '../globals.css';
 
 const inter = Inter({
@@ -38,7 +40,13 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={`${inter.variable} font-sans antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
