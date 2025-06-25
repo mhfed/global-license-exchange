@@ -5,7 +5,6 @@ import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { FieldsOfOperation } from '@/components/sections/fields-of-operation';
 import { CustomersGallery } from '@/components/sections/customers-gallery';
 import { FAQ } from '@/components/sections/faq';
-import { Footer } from '@/components/sections/footer';
 
 export default function HomePage() {
   return (
@@ -17,7 +16,6 @@ export default function HomePage() {
       <FieldsOfOperation />
       <CustomersGallery />
       <FAQ />
-      <Footer />
     </main>
   );
 } 
