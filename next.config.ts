@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/studio',
+        destination: '/studio',
+      },
+    ];
+  },
   turbopack: {
     // Enable turbopack for dev
   }

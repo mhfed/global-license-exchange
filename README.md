@@ -1,6 +1,6 @@
-# Driver License Conversion - Next.js Application
+# NextJS Blog - Multilingual CMS Application
 
-A modern, multilingual Next.js application for international driver's license conversion services, built with TypeScript, Tailwind CSS, and Sanity CMS.
+A modern, multilingual Next.js blog application with Sanity v3 CMS, built with TypeScript, Tailwind CSS, and comprehensive internationalization support.
 
 ## 🚀 Tech Stack
 
@@ -8,11 +8,25 @@ A modern, multilingual Next.js application for international driver's license co
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4
 - **Internationalization**: next-intl 3
-- **CMS**: Sanity v3
+- **CMS**: Sanity v3 with self-hosted Studio
+- **Content**: Portable Text with custom components
 - **UI Components**: Shadcn/ui + Radix UI
 - **Icons**: Lucide React
 - **Animations**: Framer Motion
 - **Package Manager**: pnpm
+
+## 🌐 Multilingual Blog Features
+
+- ✅ Vietnamese (vi) and English (en) support
+- ✅ Locale-specific content with `localeString` schema
+- ✅ SEO optimized with dynamic metadata
+- ✅ ISR (Incremental Static Regeneration) with 60s revalidation
+- ✅ Live preview mode for draft content
+- ✅ Self-hosted Sanity Studio at `/studio`
+- ✅ Rich text content with Portable Text
+- ✅ Image optimization with Next.js Image
+- ✅ Category system with color coding
+- ✅ Author management with bio and images
 
 ## 📁 Project Structure
 
@@ -21,53 +35,51 @@ nextjs-hello-world/
 ├── src/
 │   ├── app/
 │   │   ├── [locale]/
-│   │   │   ├── layout.tsx          # Locale-specific layout
-│   │   │   ├── page.tsx            # Landing page
+│   │   │   ├── layout.tsx              # Locale-specific layout
+│   │   │   ├── page.tsx                # Landing page
 │   │   │   └── blog/
-│   │   │       ├── page.tsx        # Blog listing
-│   │   │       └── [slug]/page.tsx # Blog detail
-│   │   ├── globals.css             # Global styles
-│   │   └── layout.tsx              # Root layout (redirects to locale)
+│   │   │       ├── page.tsx            # Blog listing (supports both languages)
+│   │   │       └── [slug]/page.tsx     # Blog detail with ISR
+│   │   ├── api/
+│   │   │   └── preview/route.ts        # Preview mode API
+│   │   ├── studio/[[...index]]/        # Sanity Studio route
+│   │   ├── globals.css                 # Global styles
+│   │   └── layout.tsx                  # Root layout
 │   ├── components/
-│   │   ├── sections/               # Landing page sections
-│   │   ├── blog/                   # Blog components
-│   │   └── ui/                     # Reusable UI components
+│   │   ├── portable-text-components.tsx # Custom Portable Text renderers
+│   │   ├── sections/                   # Landing page sections
+│   │   ├── blog/                       # Blog components
+│   │   └── ui/                         # Reusable UI components
 │   ├── lib/
-│   │   ├── sanity.ts              # Sanity client & queries
-│   │   └── utils.ts               # Utility functions
-│   ├── i18n.ts                    # Internationalization config
-│   └── middleware.ts              # Next.js middleware for i18n
+│   │   ├── sanity.client.ts           # Sanity client configuration
+│   │   ├── sanity.ts                  # Legacy client (backward compatibility)
+│   │   ├── queries.ts                 # GROQ queries for all content
+│   │   └── utils.ts                   # Utility functions
+│   ├── i18n.ts                        # Internationalization config
+│   └── middleware.ts                  # i18n middleware
 ├── messages/
-│   ├── vi.json                    # Vietnamese translations
-│   └── en.json                    # English translations
+│   ├── vi.json                        # Vietnamese UI translations
+│   └── en.json                        # English UI translations
 ├── sanity/
-│   ├── schemas/                   # Sanity schemas
-│   └── sanity.config.ts           # Sanity configuration
-└── public/                        # Static assets
+│   ├── schemas/
+│   │   ├── localeString.ts            # Multilingual string schema
+│   │   ├── author.ts                  # Author schema
+│   │   ├── category.ts                # Category schema
+│   │   ├── post.ts                    # Blog post schema
+│   │   ├── blockContent.ts            # Rich text schema
+│   │   └── index.ts                   # Schema exports
+│   ├── deskStructure.ts               # Studio organization by locale
+│   └── sanity.config.ts               # Sanity v3 configuration
+└── public/                            # Static assets
 ```
-
-## 🌐 Supported Languages
-
-- **Vietnamese (vi)** - Default language
-- **English (en)**
-
-## 🎨 Landing Page Sections
-
-1. **Banner Hero** - Full-width gradient hero with CTA buttons
-2. **Hero Highlights** - Three feature cards with hover animations
-3. **Service Highlight** - Two-column layout with service description
-4. **Why Choose Us** - 3×2 grid of benefits with icons
-5. **Fields of Operation** - Horizontal scrolling tags
-6. **Customers Gallery** - Masonry layout of license images
-7. **FAQ** - Collapsible accordion
-8. **Footer** - Contact info and language switcher
 
 ## 🛠 Development Setup
 
 ### Prerequisites
 
 - Node.js 18+ 
-- pnpm (recommended) or npm
+- pnpm (recommended)
+- Sanity account (free at sanity.io)
 
 ### Installation
 
@@ -85,11 +97,15 @@ nextjs-hello-world/
 3. **Environment Variables**
    Create a `.env.local` file:
    ```env
-   # Sanity
+   # Sanity Configuration
    NEXT_PUBLIC_SANITY_PROJECT_ID=vki2acig
    NEXT_PUBLIC_SANITY_DATASET=production
-   SANITY_API_READ_TOKEN=your_token_here
-   SANITY_PREVIEW_SECRET=your_preview_secret_here
+   
+   # Optional: Token for preview mode and private content
+   SANITY_API_READ_TOKEN=your_read_token_here
+   
+   # Optional: Secret for preview mode
+   SANITY_PREVIEW_SECRET=mySecret
    ```
 
 4. **Start development server**
@@ -97,186 +113,177 @@ nextjs-hello-world/
    pnpm dev
    ```
 
-5. **Open browser**
+5. **Access Sanity Studio**
+   Navigate to [http://localhost:3000/studio](http://localhost:3000/studio)
+
+6. **View the application**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📝 Content Management (Sanity)
+## 📝 Content Management with Sanity v3
 
-### Setting up Sanity Studio
+### Sanity Studio Access
 
-1. **Install Sanity CLI**
-   ```bash
-   npm install -g @sanity/cli
-   ```
+- **Development**: `http://localhost:3000/studio`
+- **Production**: `https://yourdomain.com/studio` or `https://yourdomain.com/api/studio`
 
-2. **Initialize Sanity Studio**
-   ```bash
-   cd sanity
-   sanity init
-   ```
+### Content Schemas
 
-3. **Start Sanity Studio**
-   ```bash
-   sanity dev
-   ```
-
-### Content Types
-
-- **Post**: Blog posts with title, slug, excerpt, cover image, and body content
-- **Block Content**: Rich text content with images and links
-
-## 🌍 Internationalization
-
-### Adding a New Language
-
-1. **Create translation file**
-   ```bash
-   # Add new language file
-   touch messages/fr.json
-   ```
-
-2. **Update middleware**
-   ```typescript
-   // src/middleware.ts
-   export default createMiddleware({
-     locales: ['vi', 'en', 'fr'], // Add new locale
-     defaultLocale: 'vi'
-   });
-   ```
-
-3. **Update i18n config**
-   ```typescript
-   // src/i18n.ts
-   const locales = ['vi', 'en', 'fr']; // Add new locale
-   ```
-
-### Translation Keys Structure
-
-```json
+#### 1. **localeString** - Multilingual Text Fields
+```typescript
 {
-  "cta": {
-    "getStarted": "...",
-    "learnMore": "..."
-  },
-  "hero": {
-    "headline": "...",
-    "subheadline": "..."
-  },
-  "navigation": {
-    "home": "...",
-    "blog": "..."
-  }
+  vi: "Tiếng Việt content",
+  en: "English content"
 }
 ```
 
-## 🎯 Production Deployment
+#### 2. **Post** - Blog Posts
+- Multilingual title and excerpt
+- Rich content with Portable Text
+- Cover images with alt text
+- Author references
+- Category assignments
+- SEO metadata per language
+- Locale specification (vi/en)
 
-### Build for Production
+#### 3. **Author** - Content Authors
+- Name and slug
+- Profile image with hotspot
+- Multilingual bio
 
-```bash
-pnpm build
+#### 4. **Category** - Content Categories
+- Multilingual titles
+- Color coding for UI
+- Auto-generated post counts
+
+### Creating Content
+
+1. **Access Studio**: Go to `/studio`
+2. **Posts by Locale**: Content is organized by language
+   - 🇻🇳 Vietnamese Posts
+   - 🇺🇸 English Posts
+   - 📝 All Posts
+3. **Create Post**: Select language and fill required fields
+4. **Publish**: Content appears immediately with ISR
+
+### Preview Mode
+
+Enable live preview for draft content:
+
+```
+http://localhost:3000/api/preview?secret=mySecret&slug=/vi/blog/your-post-slug
 ```
 
-### Deploy to Vercel
-
-1. **Install Vercel CLI**
-   ```bash
-   npm install -g vercel
-   ```
-
-2. **Deploy**
-   ```bash
-   vercel --prod
-   ```
-
-### Environment Variables for Production
-
-Set these in your deployment platform:
-
-```env
-NEXT_PUBLIC_SANITY_PROJECT_ID=vki2acig
-NEXT_PUBLIC_SANITY_DATASET=production
-SANITY_API_READ_TOKEN=your_production_token
-SANITY_PREVIEW_SECRET=your_production_secret
-```
-
-## 🧪 Development Commands
+## 🎯 Available Scripts
 
 ```bash
 # Development
-pnpm dev              # Start dev server
+pnpm dev              # Start Next.js dev server
+pnpm sanity:dev       # Start Sanity Studio dev server
+
+# Production
 pnpm build            # Build for production
 pnpm start            # Start production server
 
+# Sanity
+pnpm sanity:build     # Build Sanity Studio
+pnpm sanity:deploy    # Deploy Studio to Sanity's hosting
+
 # Code Quality
 pnpm lint             # Run ESLint
-pnpm lint:fix         # Fix ESLint issues
 pnpm format           # Format with Prettier
-pnpm format:check     # Check Prettier formatting
-pnpm type-check       # Run TypeScript type checking
-
-# Sanity
-cd sanity && sanity dev    # Start Sanity Studio
-cd sanity && sanity deploy # Deploy Sanity Studio
+pnpm type-check       # TypeScript checking
 ```
 
-## 📦 Key Dependencies
+## 📊 Blog Features
 
-### Production Dependencies
-- `next` - React framework
-- `react` & `react-dom` - React library
-- `next-intl` - Internationalization
-- `next-sanity` - Sanity integration
-- `@sanity/image-url` - Image URL generation
-- `framer-motion` - Animations
-- `lucide-react` - Icons
-- `tailwind-merge` & `clsx` - CSS utilities
+### Multi-language Content
+- Each post has locale-specific title, excerpt, and content
+- SEO metadata per language
+- Automatic fallback to available language
 
-### Development Dependencies
-- `typescript` - Type checking
-- `eslint` - Code linting
-- `prettier` - Code formatting
-- `tailwindcss` - CSS framework
-- `husky` - Git hooks
-- `lint-staged` - Pre-commit linting
+### Rich Content Support
+- **Text Formatting**: Bold, italic, code
+- **Headings**: H1-H4 with custom styling
+- **Links**: Internal and external with target control
+- **Images**: Optimized with Next.js Image, alt text support
+- **Blockquotes**: Styled quote blocks
+- **Lists**: Bulleted and numbered
 
-## 🎨 Styling Guide
+### Performance Optimizations
+- **ISR**: 60-second revalidation
+- **Image Optimization**: WebP format, responsive sizes
+- **Code Splitting**: Dynamic imports
+- **Static Generation**: Pre-built pages at build time
 
-- **Primary Color**: Blue (#0070f3)
-- **Accent Color**: Emerald (#10b981)
-- **Typography**: Inter font family
-- **Spacing**: Tailwind's default spacing scale
-- **Border Radius**: Rounded corners (rounded-2xl for cards)
-- **Shadows**: Layered shadows for depth
+### SEO Features
+- Dynamic metadata generation
+- Open Graph tags
+- Twitter Cards
+- Structured data ready
+- Multilingual sitemap support
 
-## 🔧 Code Quality
+## 🌍 Adding New Languages
 
-### Pre-commit Hooks
+1. **Add locale to middleware**:
+   ```typescript
+   // src/middleware.ts
+   locales: ['vi', 'en', 'fr'] // Add new locale
+   ```
 
-The project uses Husky and lint-staged for:
-- ESLint checking and auto-fixing
-- Prettier formatting
-- TypeScript type checking
+2. **Update schema**:
+   ```typescript
+   // sanity/schemas/localeString.ts
+   fields: [
+     { name: 'vi', type: 'string', title: 'Vietnamese' },
+     { name: 'en', type: 'string', title: 'English' },
+     { name: 'fr', type: 'string', title: 'French' }, // Add new
+   ]
+   ```
 
-### Conventions
+3. **Create translation file**:
+   ```bash
+   touch messages/fr.json
+   ```
 
-- Use TypeScript for all files
-- Functional components with hooks
-- Server Components by default, Client Components when needed
-- Descriptive variable names with auxiliary verbs
-- Comment complex logic in English
+## 🚀 Deployment
 
-## 📄 License
+### Vercel (Recommended)
 
-This project is private and proprietary.
+1. **Connect repository** to Vercel
+2. **Set environment variables**:
+   ```env
+   NEXT_PUBLIC_SANITY_PROJECT_ID=vki2acig
+   NEXT_PUBLIC_SANITY_DATASET=production
+   SANITY_API_READ_TOKEN=your_production_token
+   SANITY_PREVIEW_SECRET=your_production_secret
+   ```
+3. **Deploy** automatically on push
 
-## 🤝 Contributing
+### Manual Deployment
 
-1. Create a feature branch
-2. Make your changes
-3. Run tests and linting
-4. Create a pull request
+```bash
+pnpm build
+pnpm start
+```
 
-## 🆘 Support
+## 🔧 Troubleshooting
 
-For support, contact the development team or create an issue in the repository.
+### Common Issues
+
+1. **Studio not loading**: Check project ID and dataset in environment variables
+2. **Images not showing**: Verify Sanity domain in `next.config.ts`
+3. **Preview not working**: Ensure preview secret matches environment variable
+4. **Build errors**: Run `pnpm type-check` to identify TypeScript issues
+
+### Development Tips
+
+- Use `pnpm sanity:dev` for Studio-only development
+- Preview URLs: `/api/preview?secret=mySecret&slug=/locale/blog/slug`
+- Disable preview: Send DELETE request to `/api/preview`
+
+## 📖 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Sanity Documentation](https://www.sanity.io/docs)
+- [next-intl Documentation](https://next-intl-docs.vercel.app/)
+- [Tailwind CSS](https://tailwindcss.com/docs)

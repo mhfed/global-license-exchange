@@ -5,8 +5,9 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 export const client = createClient({
   projectId: "vki2acig",
   dataset: "production",
-  apiVersion: "2025-01-25",
-  useCdn: true,
+  apiVersion: "2024-06-01",
+  useCdn: process.env.NODE_ENV === 'production',
+  token: process.env.SANITY_API_READ_TOKEN,
 });
 
 const { projectId, dataset } = client.config();
@@ -16,7 +17,11 @@ export const urlFor = (source: SanityImageSource) =>
     ? imageUrlBuilder({ projectId, dataset }).image(source)
     : null;
 
-// GROQ Queries
+// Re-export from the new client for backward compatibility
+export { sanityClient } from './sanity.client';
+export * from './queries';
+
+// Legacy queries for backward compatibility
 export const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
@@ -38,7 +43,7 @@ export const POST_QUERY = `*[
   _id,
   title,
   slug,
-  body,
+  content,
   coverImage,
   publishedAt,
   excerpt

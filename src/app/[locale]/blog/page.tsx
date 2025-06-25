@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
-import { client, POSTS_QUERY } from '@/lib/sanity';
+import { Metadata } from 'next';
+import { sanityClient } from '@/lib/sanity.client';
+import { postsByLocaleQuery } from '@/lib/queries';
 import { BlogCard } from '@/components/blog/blog-card';
 import { BlogCardSkeleton } from '@/components/blog/blog-card-skeleton';
 import { BlogHeader } from '@/components/blog/blog-header';
@@ -7,12 +9,44 @@ import type { SanityDocument } from 'next-sanity';
 
 const options = { next: { revalidate: 60 } };
 
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  return {
+    title: locale === 'vi' ? 'Blog - Tin tức và bài viết' : 'Blog - News and Articles',
+    description: locale === 'vi' 
+      ? 'Khám phá những bài viết mới nhất về công nghệ, lập trình và phát triển web'
+      : 'Discover the latest articles about technology, programming and web development',
+    openGraph: {
+      title: locale === 'vi' ? 'Blog - Tin tức và bài viết' : 'Blog - News and Articles',
+      description: locale === 'vi' 
+        ? 'Khám phá những bài viết mới nhất về công nghệ, lập trình và phát triển web'
+        : 'Discover the latest articles about technology, programming and web development',
+      type: 'website',
+    },
+  };
+}
+
 async function BlogPosts({ locale }: { locale: string }) {
-  const posts = await client.fetch<SanityDocument[]>(
-    POSTS_QUERY,
+  const posts = await sanityClient.fetch<SanityDocument[]>(
+    postsByLocaleQuery,
     { locale },
     options
   );
+
+  if (!posts || posts.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-gray-600 text-lg">
+          {locale === 'vi' ? 'Chưa có bài viết nào.' : 'No posts available yet.'}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -22,6 +56,8 @@ async function BlogPosts({ locale }: { locale: string }) {
     </div>
   );
 }
+
+export const revalidate = 60;
 
 export default async function BlogPage({
   params
