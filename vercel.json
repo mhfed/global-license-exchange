@@ -1,0 +1,20 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "outputDirectory": ".next",
+  "functions": {
+    "src/app/**/*.ts": {
+      "runtime": "@vercel/node"
+    },
+    "src/app/**/*.tsx": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "regions": ["sin1"],
+  "env": {
+    "NEXT_PUBLIC_SANITY_PROJECT_ID": "@sanity_project_id",
+    "NEXT_PUBLIC_SANITY_DATASET": "@sanity_dataset"
+  }
+} 

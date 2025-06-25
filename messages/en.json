@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "title": "International Driver's License Exchange - Trusted Service",
+    "description": "Trusted and fast international driver's license exchange service with simple procedures. 24/7 support, 100% success guaranteed."
+  },
+  "hero": {
+    "headline": "Easy International Driver's License Exchange",
+    "subheadline": "Fast procedures, leading reputation",
+    "description": "We provide international driver's license exchange services with simple procedures, fast processing time and 100% success guarantee."
+  },
+  "cta": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "highlights": {
+    "fast": {
+      "title": "Fast Processing",
+      "description": "Complete procedures within 24-48 hours"
+    },
+    "secure": {
+      "title": "Absolute Security",
+      "description": "Personal information is 100% protected"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Professional consulting team always ready"
+    }
+  },
+  "service": {
+    "title": "Professional Driver's License Exchange Service",
+    "description": "With over 10 years of experience in international driver's license exchange, we are committed to providing you with the best service with transparent procedures and fast processing time."
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us?",
+    "experience": "10+ years experience",
+    "save": "Cost savings",
+    "support": "24/7 support",
+    "customers": "1000+ customers",
+    "shipping": "Home delivery",
+    "commitment": "Success commitment"
+  },
+  "fields": {
+    "title": "Fields of Operation",
+    "center": "Driver's license exchange center",
+    "license": "International driver's license",
+    "international": "International procedures",
+    "domestic": "Domestic procedures"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How long does it take to exchange an international driver's license?",
+    "a1": "Typically, the international driver's license exchange process takes 7-14 working days depending on each specific case.",
+    "q2": "What documents do I need to prepare?",
+    "a2": "You need the original driver's license, passport, visa, and some other documents. We will provide detailed advice on the required documents.",
+    "q3": "What is the service cost?",
+    "a3": "The cost depends on the type of license and country. Please contact us for detailed quotes and best offers."
+  },
+  "blog": {
+    "title": "News & Guides"
+  },
+  "footer": {
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "social": "Follow us",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "about": "About"
+  }
+} 

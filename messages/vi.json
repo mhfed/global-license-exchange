@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "title": "Đổi Bằng Lái Xe Quốc Tế - Dịch Vụ Uy Tín",
+    "description": "Dịch vụ đổi bằng lái xe quốc tế uy tín, nhanh chóng, thủ tục đơn giản. Hỗ trợ 24/7, cam kết thành công 100%."
+  },
+  "cta": {
+    "getStarted": "Bắt Đầu Ngay",
+    "learnMore": "Tìm Hiểu Thêm",
+    "contactUs": "Liên hệ ngay",
+    "readMore": "Đọc thêm"
+  },
+  "hero": {
+    "headline": "Đổi Bằng Lái Xe Quốc Tế Dễ Dàng",
+    "subheadline": "Thủ tục nhanh chóng, uy tín hàng đầu",
+    "description": "Chúng tôi cung cấp dịch vụ đổi bằng lái xe quốc tế với quy trình đơn giản, thời gian xử lý nhanh và đảm bảo thành công 100%."
+  },
+  "highlights": {
+    "fast": {
+      "title": "Xử Lý Nhanh Chóng",
+      "description": "Hoàn thành thủ tục trong 24-48 giờ"
+    },
+    "secure": {
+      "title": "Bảo Mật Tuyệt Đối",
+      "description": "Thông tin cá nhân được bảo vệ 100%"
+    },
+    "support": {
+      "title": "Hỗ Trợ 24/7",
+      "description": "Đội ngũ tư vấn chuyên nghiệp luôn sẵn sàng"
+    }
+  },
+  "service": {
+    "title": "Dịch Vụ Đổi Bằng Lái Xe Chuyên Nghiệp",
+    "description": "Với hơn 10 năm kinh nghiệm trong lĩnh vực đổi bằng lái xe quốc tế, chúng tôi cam kết mang đến cho bạn dịch vụ tốt nhất với quy trình minh bạch và thời gian xử lý nhanh chóng."
+  },
+  "whyChooseUs": {
+    "title": "Tại Sao Chọn Chúng Tôi?",
+    "experience": "Kinh nghiệm 10+ năm",
+    "save": "Tiết kiệm chi phí",
+    "support": "Hỗ trợ 24/7",
+    "customers": "1000+ khách hàng",
+    "shipping": "Giao hàng tận nơi",
+    "commitment": "Cam kết thành công"
+  },
+  "fields": {
+    "title": "Lĩnh Vực Hoạt Động",
+    "center": "Trung tâm đổi bằng lái",
+    "license": "Bằng lái xe quốc tế",
+    "international": "Thủ tục quốc tế",
+    "domestic": "Thủ tục trong nước"
+  },
+  "faq": {
+    "title": "Câu Hỏi Thường Gặp",
+    "q1": "Thời gian đổi bằng lái xe quốc tế mất bao lâu?",
+    "a1": "Thông thường, quy trình đổi bằng lái xe quốc tế mất từ 7-14 ngày làm việc tùy thuộc vào từng trường hợp cụ thể.",
+    "q2": "Tôi cần chuẩn bị những giấy tờ gì?",
+    "a2": "Bạn cần có bằng lái xe gốc, hộ chiếu, visa, và một số giấy tờ khác. Chúng tôi sẽ tư vấn chi tiết về hồ sơ cần thiết.",
+    "q3": "Chi phí dịch vụ là bao nhiêu?",
+    "a3": "Chi phí phụ thuộc vào loại bằng lái và quốc gia. Vui lòng liên hệ để được báo giá chi tiết và ưu đãi tốt nhất."
+  },
+  "blog": {
+    "title": "Tin Tức & Hướng Dẫn",
+    "readMore": "Đọc thêm",
+    "publishedOn": "Đăng ngày",
+    "noArticles": "Chưa có bài viết nào"
+  },
+  "footer": {
+    "contact": "Liên hệ",
+    "phone": "Điện thoại",
+    "email": "Email",
+    "address": "Địa chỉ",
+    "social": "Theo dõi chúng tôi",
+    "language": "Ngôn ngữ"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "blog": "Blog",
+    "contact": "Liên hệ",
+    "about": "Giới thiệu"
+  }
+} 
